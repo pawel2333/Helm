@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "01-Mysql.fullname" . }}
+  name: mysql-01
   labels:
     {{- include "01-Mysql.labels" . | nindent 4 }}
 spec:

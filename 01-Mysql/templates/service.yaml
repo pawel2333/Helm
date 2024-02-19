@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "01-Mysql.fullname" . }}
+  name: mysql-01
   labels:
     {{- include "01-Mysql.labels" . | nindent 4 }}
 spec:
