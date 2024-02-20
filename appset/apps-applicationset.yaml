@@ -14,6 +14,8 @@ spec:
         exclude: true
       - path: 00-nginx
         exclude: true
+      - path: appset
+        exclude: true
   template:
     metadata:
       name: '{{path.basename}}'
