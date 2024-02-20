@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/pawel2333/Helm.git
       revision: HEAD
       directories:
-      - path: Helm/*
+      - path: *
   template:
     metadata:
       name: '{{path.basename}}'
