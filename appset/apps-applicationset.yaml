@@ -10,6 +10,10 @@ spec:
       revision: HEAD
       directories:
       - path: '*'
+      - path: 02-mysql
+        exclude: true
+      - path: 00-nginx
+        exclude: true
   template:
     metadata:
       name: '{{path.basename}}'
