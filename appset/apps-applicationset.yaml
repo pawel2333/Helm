@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-addons
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/pawel2333/Helm.git
+      revision: HEAD
+      directories:
+      - path: Helm/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: "my-project"
+      source:
+        repoURL: https://github.com/pawel2333/Helm.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
