@@ -9,19 +9,19 @@ spec:
       repoURL: https://github.com/pawel2333/Helm.git
       revision: HEAD
       directories:
-      - path: *
+      - path: '*'
   template:
     metadata:
       name: '{{path.basename}}'
     spec:
-      project: "my-project"
+      project: "default"
       source:
         repoURL: https://github.com/pawel2333/Helm.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: '{{path.basename}}-ns'
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
