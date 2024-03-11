@@ -99,4 +99,4 @@ affinity: {}
 
 namemetadata: "pawelapp"
 
-healthcheck: /healthz
+healthcheck: /
